@@ -10,10 +10,11 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: echo Hello, world!
+- script: apt update && apt install -y cmake
   displayName: 'Run a one-line script'
 
 - script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
+    pwd
+    mkdir build && cd build && cmake .. && make 
+    ls -lht
   displayName: 'Run a multi-line script'
