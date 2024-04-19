@@ -10,11 +10,11 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: sudo apt update && sudo apt install -y cmake
-  displayName: 'Run a one-line script'
+- task: CMake@1
+  displayName: 'Setup cmake'
 
 - script: |
     pwd
-    mkdir build && cd build && cmake .. && make 
+    cd build && cmake .. && make 
     ls -lht
   displayName: 'Run a multi-line script'
