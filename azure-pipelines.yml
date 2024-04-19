@@ -10,7 +10,7 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: apt update && apt install -y cmake
+- script: sudo apt update && suod apt install -y cmake
   displayName: 'Run a one-line script'
 
 - script: |
